@@ -4,7 +4,7 @@ An Excel VBA system that compiles weekly recruitment data from many recruiter fi
 
 Built while working in Corporate Talent Acquisition and People Analytics at Cimory Group (2026). It was later rebuilt as a web application: [fptk-database](https://github.com/thunderclouds863/fptk-database).
 
-> **Source code only.** The workbook itself is not published because it holds candidate data. Colleague names in the code were replaced with placeholders (`Recruiter01`, `Recruiter02`, …). Business-unit codes (CORP, MP, MS, CMD, JESS) are kept.
+> **No real data.** The original workbook holds candidate data, so only its structure is published: a clean template without data, macros or dashboards, plus the VBA source. Colleague names were replaced with placeholders (`Recruiter01`, `Recruiter02`, …). Business-unit codes (CORP, MP, MS, CMD, JESS) are kept.
 
 ## Problem
 
@@ -38,7 +38,13 @@ Each recruiter and business unit kept their own Excel file for manpower requests
 
 ## Files
 
-- `src/`: 32 VBA modules and 1 user form, about 49,000 lines.
+- `FPTK_Template.xlsx`: empty workbook structure (no macros, no dashboards):
+  - header rows of the data sheets: FPTK, DB Sourcing, DB Kode Posisi, Blacklist Candidate, Recruiter Master, Direktorat, Kode Dropdown
+  - `Settings` with setting names only
+  - `Schema_Config` in full: 341 field definitions with aliases, data types, form controls and dropdown values that drive the header mapping
+  - `Flow Map Model` in full: recruitment steps per recruitment model
+  - header rows of the log sheets
+- `src/`: 32 VBA modules and 1 user form, about 49,000 lines. To run them, import the modules into a macro-enabled copy of the template (VBA editor → File → Import File).
 - `frmHeaderAdjustment.frm` contains the form code only; its layout file (`.frx`) is not included.
 
 ## Tools
